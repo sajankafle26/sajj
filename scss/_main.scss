@@ -1,0 +1,224 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html 
+{
+    font-size: 100%;
+    @include res 
+    {
+        font-size: 70%;
+    }
+}
+body 
+{
+    font-family: 'Poppins', sans-serif;
+}
+h1,h2,h3,h4,h5,h6 
+{
+    font-weight: 700;
+}
+a 
+{
+    text-decoration: none;
+}
+ul 
+{
+    list-style: none;
+}
+
+.con 
+{
+    max-width: 1200px;
+    margin: auto;
+    padding: 0px 15px;
+}
+.top 
+{
+    @include res 
+    {
+        display: none;
+    }
+    font-size: 14px;
+    line-height: 45px;
+    .con 
+    {
+        @include flex;
+    }
+    ul 
+    {
+        @include flex;
+        gap: 20px;
+        .border
+        {
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+            padding: 2px 10px;
+        }
+    }
+}
+
+header
+{
+    .con 
+    {
+        @include flex;
+    }
+    a 
+    {
+        color: $w;
+    }
+    background: $brand;
+    nav 
+    {
+        
+      ul 
+      {
+        @include flex;
+        gap: 20px;
+        @include res 
+        {
+            display: none
+        }
+      } 
+      span 
+      {
+        display: none;
+        font-size: 2rem;
+        color: $w;
+        @include res 
+        {
+            display: block;
+        }
+      }
+    }
+    .logo 
+    {
+        @include flex;
+        padding-top: 5px;
+        color: $w;
+        font-size: 1.4rem;
+        font-weight: 900;
+        img 
+        {
+            width: 140px;
+        }
+    }
+}
+
+.banner 
+{
+    height: calc(100vh - 120px);
+    @include res {
+        height: 70vh;
+    }
+    background: url(../img/banner.jpg);
+    background-size: cover;
+    @include flex;
+    text-align: center;
+    color: $w;
+    h2 
+    {
+        font-size: 2rem;
+        padding: 20px 0;
+    }
+    &-inner
+    {
+        max-width: 70%;
+        margin: auto;
+    }
+}
+.btn
+{
+    background: $brand;
+    color: $w;
+    padding: 10px 20px;
+    margin: 20px 0;
+    display: inline-block;
+    border: 2px solid $brand;
+    &:hover 
+    {
+         
+        background: transparent;
+    }
+}
+
+.tour
+{
+    padding: 30px 0;
+}
+.title
+{
+    text-align: center;
+    padding-bottom: 30px;
+    h2 
+    {
+        position: relative;
+        &::after{
+            content: '';
+            width: 50px;
+            height: 3px;
+            background: $brand;
+            position: absolute;
+            left: 50%;
+            top: 40px;
+            @include res 
+            {
+                top: 30px;
+            }
+            transform: translateX(-50%);
+        }
+    }
+    p 
+    {
+        opacity: 0.7;
+        padding-top: 10px;
+    }
+}
+
+.box
+{
+    position: relative;
+    img 
+    {
+        height: 400px;
+        object-fit: cover;
+    }
+    .bc 
+    {
+        position:absolute;
+        color: $w;
+        bottom: 20px;
+        left: 20px;
+        i 
+        {
+            color: orange;
+        }
+    }
+}
+.whyus
+{
+    padding: 30px 0;
+    .con 
+    {
+        @include flex;
+        @include res 
+        {
+            flex-direction: column;
+        }
+        text-align: center;
+        h3 
+        {
+            padding: 20px 0;
+            color: $brand;
+        }
+    }
+}
+footer
+{
+    background: $brand;
+    color: $w;
+    padding: 30px 0;
+}

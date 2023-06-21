@@ -1,0 +1,12 @@
+@mixin res 
+{
+    @media (max-width: 480px) {
+        @content;
+    }
+}
+@mixin flex 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
